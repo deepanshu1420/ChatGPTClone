@@ -72,16 +72,16 @@
 
 ## 🛠️ Tech Stack Used
 
-- ⚛️ **Frontend:** React v18.2.0
-- 🟨 **Programming Language:** JavaScript (ES6+)
-- 🎨 **Styling:** Custom CSS
-- 🧠 **AI Integration:** OpenAI Node SDK (v5.12.2)
-- 🤖 **AI Model:** GPT-4o
-- 📝 **Markdown Rendering:** React Markdown (v10.1.0)
-- 📋 **GitHub Flavored Markdown:** Remark GFM (v4.0.1)
-- 💻 **Code Highlighting:** React Syntax Highlighter (v16.1.1)
-- 🌙 **Syntax Theme:** Prism One Dark
-- 🌐 **Deployment:** Vercel
+- **⚛️ Frontend:** React v18.2.0
+- **🟨 Programming Language:** JavaScript (ES6+)
+- **🎨 Styling:** Custom CSS
+- **🧠 AI Integration:** OpenAI Node SDK (v5.12.2)
+- **🤖 AI Model:** GPT-4o
+- **📝 Markdown Rendering:** React Markdown (v10.1.0)
+- **📋 GitHub Flavored Markdown:** Remark GFM (v4.0.1)
+- **💻 Code Highlighting:** React Syntax Highlighter (v16.1.1)
+- **🌙 Syntax Theme:** Prism One Dark
+- **🔗 Deployment:** Vercel
 
 ## ⚙️ Setup & Installation
 
