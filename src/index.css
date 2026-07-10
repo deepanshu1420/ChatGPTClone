@@ -426,11 +426,11 @@ input:focus {
 
   .input-text {
     width: 100%;
-    margin-bottom: 1.8rem;
+    margin-bottom: 0.5rem;
   }
 
   .footer {
-    margin-bottom: -2rem;
+    margin-bottom: -4rem;
   }
 
   .user-text p,
