@@ -1,4 +1,4 @@
-# 🤖 ChatGPT Clone
+# 💡 ChatGPT Clone
 
 [![React](https://img.shields.io/badge/React-v18.2.0-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -73,7 +73,7 @@
 ## 🛠️ Tech Stack Used
 
 - ⚛️ **Frontend:** React v18.2.0
-- 🟨 **Language:** JavaScript (ES6+)
+- 🟨 **Programming Language:** JavaScript (ES6+)
 - 🎨 **Styling:** Custom CSS
 - 🧠 **AI Integration:** OpenAI Node SDK (v5.12.2)
 - 🤖 **AI Model:** GPT-4o
