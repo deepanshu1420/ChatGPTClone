@@ -9,53 +9,38 @@
 [![Syntax Highlighter](https://img.shields.io/badge/React_Syntax_Highlighter-v16.1.1-orange)](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-A modern conversational web application that recreates the familiar ChatGPT experience with a clean interface, instant AI responses, rich Markdown rendering, and beautifully formatted code blocks. Designed with a strong focus on usability, responsiveness, and smooth interactions, the application delivers a seamless AI-powered conversation experience across desktop and mobile devices.
+- A modern conversational web application that recreates the familiar ChatGPT experience with a clean interface, instant AI responses, rich Markdown rendering, and beautifully formatted code blocks. 
+- Designed with a strong focus on usability, responsiveness, and smooth interactions, the application delivers a seamless AI-powered conversation experience across desktop and mobile devices.
 
-## 🌐 Live Demo
+**🌐 Ready to experience conversations inspired by ChatGPT :** [Live Demo](https://chatgptclonee.vercel.app/)
 
-**🔗 https://chatgptclonee.vercel.app/**
-
----
-
-# ✨ Features / Highlights
+## ✨ Features / Highlights
 
 ### 💬 Real-Time Conversational Experience
 
 Experience natural AI conversations through a responsive interface that instantly connects user prompts with the OpenAI GPT-4o model. Every interaction is designed to feel fluid, distraction-free, and closely aligned with the experience of modern conversational AI platforms.
 
----
-
 ### 📝 Rich Markdown Rendering
 
 AI responses are automatically transformed into beautifully formatted content using GitHub Flavored Markdown. Whether it's headings, lists, tables, links, or inline formatting, every response remains structured and easy to read without sacrificing visual consistency.
-
----
 
 ### 💻 Elegant Code Presentation
 
 Programming responses are displayed inside professionally styled syntax-highlighted code blocks powered by Prism, making generated code significantly easier to read, understand, and copy for real-world development workflows.
 
----
-
 ### ⚡ Fast & Responsive User Interface
 
 Built with React's component-driven architecture, the application provides smooth rendering, responsive layouts, automatic scrolling, and an adaptive input area that grows naturally as users type longer prompts.
-
----
 
 ### 🎯 Productivity-Focused Interactions
 
 Small usability enhancements create a polished experience, including one-click response copying, predefined prompt shortcuts, instant conversation reset, and the ability to cancel AI generation without interrupting the application.
 
----
-
 ### 🛡️ Reliable Error Management
 
 Common API and network failures are handled gracefully with meaningful feedback for authentication issues, rate limits, permission errors, server failures, network interruptions, and cancelled requests, ensuring the interface remains stable even during unexpected scenarios.
 
----
-
-# 📸 Screenshots
+## 📸 Screenshots
 
 ### 🏠 Home
 
@@ -73,38 +58,20 @@ Common API and network failures are handled gracefully with meaningful feedback 
 
 ![Responsive](./screenshots/Responsive.png)
 
----
+## 🛠️ Tech Stack Used
 
-# 🛠️ Tech Stack
+- ⚛️ **Frontend:** React v18.2.0
+- 🟨 **Language:** JavaScript (ES6+)
+- 🎨 **Styling:** Custom CSS
+- 🧠 **AI Integration:** OpenAI Node SDK (v5.12.2)
+- 🤖 **AI Model:** GPT-4o
+- 📝 **Markdown Rendering:** React Markdown (v10.1.0)
+- 📋 **GitHub Flavored Markdown:** Remark GFM (v4.0.1)
+- 💻 **Code Highlighting:** React Syntax Highlighter (v16.1.1)
+- 🌙 **Syntax Theme:** Prism One Dark
+- 🌐 **Deployment:** Vercel
 
-### 🎨 Frontend
-
-- React v18.2.0
-- JavaScript (ES6+)
-- Custom CSS
-
-### 🧠 AI Integration
-
-- OpenAI Node SDK (v5.12.2)
-- GPT-4o Model
-
-### 📄 Markdown Rendering
-
-- React Markdown
-- Remark GFM
-
-### 💻 Code Highlighting
-
-- React Syntax Highlighter
-- Prism One Dark Theme
-
-### 🚀 Deployment
-
-- Vercel
-
----
-
-# ⚙️ Setup & Installation
+## ⚙️ Setup & Installation
 
 ### 1️⃣ Clone the Repository
 
@@ -143,31 +110,3 @@ Visit the application at:
 ```text
 http://localhost:3000
 ```
-
----
-
-# 📂 Project Structure
-
-```text
-chatgpt-clone/
-│
-├── public/
-├── src/
-│   ├── Components/
-│   ├── assets/
-│   ├── App.js
-│   ├── openai.js
-│   ├── index.js
-│   └── App.css
-│
-├── screenshots/
-├── .env
-├── package.json
-└── README.md
-```
-
----
-
-## ⭐ Show Your Support
-
-If you enjoyed exploring this project, consider giving it a ⭐ on GitHub. Your support helps the project reach more developers and encourages future improvements.
