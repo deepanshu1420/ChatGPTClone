@@ -9,7 +9,7 @@
 [![Syntax Highlighter](https://img.shields.io/badge/React_Syntax_Highlighter-v16.1.1-orange)](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-- A modern conversational web application that recreates the familiar ChatGPT experience with a clean interface, instant AI responses, rich Markdown rendering, and beautifully formatted code blocks. 
+- A modern conversational web application that recreates the familiar `ChatGPT experience` with a clean interface, instant AI responses, rich Markdown rendering, and beautifully formatted code blocks. 
 - Designed with a strong focus on usability, responsiveness, and smooth interactions, the application delivers a seamless AI-powered conversation experience across desktop and mobile devices.
 
 **🌐 Ready to experience conversations inspired by ChatGPT :** [Live Demo](https://chatgptclonee.vercel.app/)
@@ -18,45 +18,57 @@
 
 ### 💬 Real-Time Conversational Experience
 
-Experience natural AI conversations through a responsive interface that instantly connects user prompts with the OpenAI GPT-4o model. Every interaction is designed to feel fluid, distraction-free, and closely aligned with the experience of modern conversational AI platforms.
+- Experience natural AI conversations through a responsive interface that instantly connects user prompts with the OpenAI GPT-4o model.
+- Every interaction is designed to feel fluid, distraction-free, and closely aligned with the experience of modern conversational AI platforms.
 
 ### 📝 Rich Markdown Rendering
 
-AI responses are automatically transformed into beautifully formatted content using GitHub Flavored Markdown. Whether it's headings, lists, tables, links, or inline formatting, every response remains structured and easy to read without sacrificing visual consistency.
+- AI responses are automatically transformed into beautifully formatted content using GitHub Flavored Markdown (GFM).
+- Supports headings, lists, tables, links, and inline formatting to keep every response structured, readable, and visually consistent.
 
 ### 💻 Elegant Code Presentation
 
-Programming responses are displayed inside professionally styled syntax-highlighted code blocks powered by Prism, making generated code significantly easier to read, understand, and copy for real-world development workflows.
+- Programming responses are rendered inside professionally styled, syntax-highlighted code blocks powered by Prism.
+- Enhances code readability and makes generated snippets easier to understand, copy, and use in real-world development workflows.
 
 ### ⚡ Fast & Responsive User Interface
 
-Built with React's component-driven architecture, the application provides smooth rendering, responsive layouts, automatic scrolling, and an adaptive input area that grows naturally as users type longer prompts.
+- Built with React's component-driven architecture to deliver smooth rendering, responsive layouts, and a seamless user experience across devices.
+- Features automatic scrolling and an adaptive input area that expands naturally as users type longer prompts, ensuring uninterrupted and comfortable interactions.
 
 ### 🎯 Productivity-Focused Interactions
 
-Small usability enhancements create a polished experience, including one-click response copying, predefined prompt shortcuts, instant conversation reset, and the ability to cancel AI generation without interrupting the application.
+- Includes thoughtful productivity features such as one-click response copying, predefined prompt shortcuts, and instant conversation reset.
+- Supports seamless cancellation of AI response generation without disrupting the overall application experience.
 
 ### 🛡️ Reliable Error Management
 
-Common API and network failures are handled gracefully with meaningful feedback for authentication issues, rate limits, permission errors, server failures, network interruptions, and cancelled requests, ensuring the interface remains stable even during unexpected scenarios.
+- Gracefully handles common API and network failures, including authentication issues, rate limits, permission errors, server failures, and network interruptions.
+- Provides meaningful feedback while ensuring the interface remains stable and responsive, even when requests are cancelled or unexpected errors occur.
 
-## 📸 Screenshots
+# 📸 Screenshots / Demo
+
+> Take a look at some screenshots showcasing the website.
 
 ### 🏠 Home
 
 ![Home](./screenshots/Home.png)
+*The landing interface featuring a clean layout, quick prompt suggestions, and an intuitive conversational workspace.*
 
 ### 💬 Conversation
 
 ![Conversation](./screenshots/Conversation.png)
+*Engage in natural AI conversations with beautifully formatted responses and a distraction-free chat experience.*
 
 ### 💻 Code Generation
 
 ![Code Generation](./screenshots/CodeGeneration.png)
+*Programming responses are presented with syntax-highlighted code blocks for improved readability and effortless copying.*
 
 ### 📱 Responsive Design
 
 ![Responsive](./screenshots/Responsive.png)
+*A fully responsive interface optimized to deliver a consistent experience across desktop, tablet, and mobile devices.*
 
 ## 🛠️ Tech Stack Used
 
@@ -71,42 +83,45 @@ Common API and network failures are handled gracefully with meaningful feedback 
 - 🌙 **Syntax Theme:** Prism One Dark
 - 🌐 **Deployment:** Vercel
 
-## ⚙️ Setup & Installation
+# ⚙️ Setup & Installation
 
-### 1️⃣ Clone the Repository
+> To set up and run the project locally, follow the steps below:
 
-```bash
-git clone https://github.com/your-username/chatgpt-clone.git
-```
-
-### 2️⃣ Navigate to the Project Directory
+### 1️⃣ Clone the repository
 
 ```bash
-cd chatgpt-clone
+git clone https://github.com/deepanshu1420/ChatGPTClone.git
 ```
 
-### 3️⃣ Install Dependencies
+### 2️⃣ Navigate to the project directory
+
+```bash
+cd ChatGPTClone
+```
+
+### 3️⃣ Install the required dependencies
 
 ```bash
 npm install
 ```
 
-### 4️⃣ Configure Environment Variables
-
-Create a `.env` file in the root directory.
+### 4️⃣ Open the `.env.example` file, add your API Key and Base URL, then rename it to `.env`
 
 ```env
 REACT_APP_BLUESMINDS_API_KEY=your_api_key
+REACT_APP_BLUESMINDS_BASE_URL=your_base_url
 ```
 
-### 5️⃣ Start the Development Server
+### 5️⃣ Start the development server
 
 ```bash
 npm start
 ```
 
-Visit the application at:
+✅ **That's it!** The project should now be running locally at:
 
 ```text
 http://localhost:3000
 ```
+
+Open the URL in your browser and start experiencing a seamless `ChatGPT-inspired` conversational interface. ☄️
