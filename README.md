@@ -5,8 +5,8 @@
 [![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-412991?logo=openai&logoColor=white)](https://openai.com/)
 [![React Markdown](https://img.shields.io/badge/React_Markdown-v10.1.0-blue)](https://github.com/remarkjs/react-markdown)
 [![Remark GFM](https://img.shields.io/badge/Remark_GFM-v4.0.1-green)](https://github.com/remarkjs/remark-gfm)
-[![Syntax Highlighter](https://img.shields.io/badge/React_Syntax_Highlighter-v16.1.1-orange)](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
 [![CSS3](https://img.shields.io/badge/CSS3-v3.0-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![Syntax Highlighter](https://img.shields.io/badge/React_Syntax_Highlighter-v16.1.1-orange)](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 # 🤖 ChatGPT Clone
