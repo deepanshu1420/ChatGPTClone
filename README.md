@@ -23,12 +23,12 @@
 
 ### 📝 Rich Markdown Rendering
 
-- AI responses are automatically transformed into beautifully formatted content using GitHub Flavored Markdown (GFM).
+- AI responses are automatically transformed into beautifully formatted content using GitHub Flavored Markdown.
 - Supports headings, lists, tables, links, and inline formatting to keep every response structured, readable, and visually consistent.
 
 ### 💻 Elegant Code Presentation
 
-- Programming responses are rendered inside professionally styled, syntax-highlighted code blocks powered by Prism.
+- Programming responses are rendered inside elegantly styled, syntax-highlighted code blocks powered by Prism.
 - Enhances code readability and makes generated snippets easier to understand, copy, and use in real-world development workflows.
 
 ### ⚡ Fast & Responsive User Interface
@@ -85,7 +85,7 @@
 
 # ⚙️ Setup & Installation
 
-> To set up and run the project locally, follow the steps below:
+> To set up and run the project locally, follow these steps below:
 
 ### 1️⃣ Clone the repository
 
