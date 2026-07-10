@@ -241,6 +241,7 @@ i {
   flex-shrink: 0;
   width: 100%;
   margin-top: auto;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .footer p {
@@ -461,6 +462,11 @@ input:focus {
 
   .footer-text {
       font-size: 10px !important;   
+  }
+
+  body {
+      background-color: rgb(3, 0, 31);
+      padding-bottom: env(safe-area-inset-bottom);
   }
 
 }
