@@ -384,7 +384,7 @@ function App() {
                                                 ? "disabled"
                                                 : ""
                                         }`}
-                                        onClick={trigger}
+                                        onClick={() => trigger()}
                                     >
                                         <i className="fa-solid fa-arrow-up"></i>
                                     </div>
