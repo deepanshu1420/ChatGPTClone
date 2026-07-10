@@ -244,13 +244,17 @@ function App() {
                             <i className="fa-solid fa-bookmark"></i>
                             <span className="text">Bookmark</span>
                         </div>
-
-                        <div className="side-division-2-icon"
-                        onClick={() => window.open("https://github.com/deepanshu1420", "_blank")}
+                        
+                        <a
+                        href="https://github.com/deepanshu1420"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="side-division-2-icon"
+                        style={{ textDecoration: "none", color: "inherit" }}
                         >
                             <i className="fa-brands fa-github"></i>
                             <span className="text">GitHub</span>
-                        </div>
+                            </a>
 
                     </div>
 
