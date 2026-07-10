@@ -46,7 +46,7 @@
 - Gracefully handles common API and network failures, including authentication issues, rate limits, permission errors, server failures, and network interruptions.
 - Provides meaningful feedback while ensuring the interface remains stable and responsive, even when requests are cancelled or unexpected errors occur.
 
-# 📸 Screenshots / Demo
+## 📸 Screenshots / Demo
 
 > Take a look at some screenshots showcasing the website.
 
@@ -83,7 +83,7 @@
 - 🌙 **Syntax Theme:** Prism One Dark
 - 🌐 **Deployment:** Vercel
 
-# ⚙️ Setup & Installation
+## ⚙️ Setup & Installation
 
 > To set up and run the project locally, follow these steps below:
 
