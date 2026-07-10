@@ -31,7 +31,7 @@
 - Programming responses are rendered inside elegantly styled, syntax-highlighted code blocks powered by Prism.
 - Enhances code readability and makes generated snippets easier to understand, copy, and use in real-world development workflows.
 
-### ⚡ Fast & Responsive User Interface
+### 🔥 Fast & Responsive User Interface
 
 - Built with React's component-driven architecture to deliver smooth rendering, responsive layouts, and a seamless user experience across devices.
 - Features automatic scrolling and an adaptive input area that expands naturally as users type longer prompts, ensuring uninterrupted and comfortable interactions.
@@ -60,7 +60,7 @@
 ![Conversation](./screenshots/Conversation.png)
 *Engage in natural AI conversations with beautifully formatted responses and a distraction-free chat experience.*
 
-### 💻 Code Generation
+### ⚡ Code Generation
 
 ![Code Generation](./screenshots/CodeGeneration.png)
 *Programming responses are presented with syntax-highlighted code blocks for improved readability and effortless copying.*
