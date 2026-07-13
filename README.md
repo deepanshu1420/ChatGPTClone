@@ -108,6 +108,8 @@ npm install
 
 ### 4️⃣ Open the `.env.example` file, add your API Key and Base URL, then rename it to `.env`
 
+Visit **app.bluesminds.ai** to generate your API Key and Base URL.
+
 ```env
 REACT_APP_BLUESMINDS_API_KEY=your_api_key
 REACT_APP_BLUESMINDS_BASE_URL=your_base_url
