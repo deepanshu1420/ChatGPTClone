@@ -64,7 +64,7 @@
 ### ⚡ Code Generation
 
 ![Code Generation](./screenshots/CodeGeneration.png)
-*Programming responses are presented with syntax-highlighted code blocks for improved readability and effortless copying.*
+*Programming responses are presented with `syntax-highlighted` code blocks for improved readability and effortless copying.*
 
 ### 📱 Responsive Design
 
