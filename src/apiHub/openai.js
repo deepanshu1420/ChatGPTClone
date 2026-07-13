@@ -11,6 +11,7 @@ const openai = new OpenAI({
 let cachedModels = null;        // Sorted list of model IDs from BluesMinds
 let lastWorkingModelId = null;  // Last model that successfully returned a response
 let modelsFetchedAt = null;     // Timestamp of last fetch
+const failedModels = new Set(); // Models that failed this session
 
 const CACHE_TTL_MS = 5 * 60 * 1000; // Re-fetch model list every 5 minutes
 
@@ -161,6 +162,8 @@ function classifyError(error) {
     case 404:
       // Model not found — try the next one
       return { type: "retry" };
+    case 410:
+      return { type: "failed" };  
     default:
       break;
   }
@@ -218,6 +221,8 @@ async function sendMessage(question, signal) {
     attemptOrder = [...models];
   }
 
+  attemptOrder = attemptOrder.filter(m => !failedModels.has(m));
+
   // 3. Try each model in order until one succeeds
   for (let i = 0; i < attemptOrder.length; i++) {
     const modelId = attemptOrder[i];
@@ -254,6 +259,11 @@ async function sendMessage(question, signal) {
 
       // User clicked Stop — return silently, no error shown
       if (classified.type === "abort") return null;
+
+      if (classified.type === "failed") {
+        failedModels.add(modelId);
+        continue;
+      }
 
       // Fatal errors — don't try other models, just show the message
       if (classified.type === "fatal") {
