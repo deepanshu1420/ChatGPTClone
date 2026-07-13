@@ -28,8 +28,10 @@ function markdownToPlainText(md) {
     .replace(/^(.+)\n[-]{2,}\s*$/gm, '$1')
     .replace(/^#{1,6}\s+(.+)/gm, '$1')
     .replace(/\*\*\*(.+?)\*\*\*/g, '$1')
-    .replace(/\*\*(.+?)\*\*/g, '$1').replace(/__(.+?)__/g, '$1')
-    .replace(/\*(.+?)\*/g, '$1').replace(/_(.+?)_/g, '$1')
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/__(.+?)__/g, '$1')
+    .replace(/\*(.+?)\*/g, '$1')
+    .replace(/_(.+?)_/g, '$1')
     .replace(/`([^`]+)`/g, '$1')
     .replace(/^>\s*/gm, '')
     .replace(/^[-=*_]{3,}\s*$/gm, '')
@@ -37,6 +39,13 @@ function markdownToPlainText(md) {
     .replace(/^[\s]*(\d+)\.\s+/gm, '$1. ')
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
     .replace(/~~(.+?)~~/g, '$1')
+
+    // ✅ Preserve blank line before numbered lists
+    .replace(/([^\n])\n(\d+\.\s)/g, '$1\n\n$2')
+
+    // ✅ Normalize Windows line endings
+    .replace(/\r\n/g, '\n')
+
     .replace(/\n{3,}/g, '\n\n')
     .trim();
 }
