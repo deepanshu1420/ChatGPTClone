@@ -50,7 +50,8 @@ h1, h2, h3 {
 }
 
 .side-1 {
-  flex: 20%;   
+  flex: 20%;  
+  flex-shrink: 0; 
   border-right: 1px solid rgba(128, 128, 128, 0.15);
   display: flex;
   flex-direction: column;
@@ -169,6 +170,7 @@ i {
 /* ---------------- Main Chat Area ---------------- */
 .side-2 {
   flex: 75%;
+  min-width: 0;
   padding: 5rem 15rem;
   padding-bottom: 0;
   display: flex;
