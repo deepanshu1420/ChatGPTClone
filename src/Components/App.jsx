@@ -357,7 +357,7 @@ function App() {
                             <img src={ChatGPT} alt="ChatGPT" />
 
                             <p>
-                                Hello! I'm Deepanshu Sharma, a future-focused software developer building AI-powered applications. This app recreates the ChatGPT experience with seamless OpenAI GPT-4o API integration, a modern responsive interface, and an intuitive conversational UI.
+                                Hello! I'm Deepanshu Sharma, a future-focused software developer building AI-powered applications. This app recreates a ChatGPT-like experience with seamless multi-model AI integration, a modern responsive interface, and an intuitive dialogue-based UI.
                             </p>
 
                         </div>
