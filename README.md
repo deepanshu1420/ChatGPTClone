@@ -2,12 +2,12 @@
 
 [![React](https://img.shields.io/badge/React-v18.2.0-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![OpenAI SDK](https://img.shields.io/badge/OpenAI%20Node%20SDK-v5.12.2-412991?logo=openai&logoColor=white)](https://openai.com/)
+[![OpenAI Node SDK](https://img.shields.io/badge/OpenAI%20Node%20SDK-v5.12.2-412991?logo=openai&logoColor=white)](https://openai.com/)
 [![Generative AI](https://img.shields.io/badge/Generative-AI-6C63FF?logo=openai&logoColor=white)](https://generativeai.net/)
 [![React Markdown](https://img.shields.io/badge/React_Markdown-v10.1.0-blue)](https://github.com/remarkjs/react-markdown)
 [![Remark GFM](https://img.shields.io/badge/Remark_GFM-v4.0.1-green)](https://github.com/remarkjs/remark-gfm)
 [![CSS3](https://img.shields.io/badge/CSS3-v3.0-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![Syntax Highlighter](https://img.shields.io/badge/React_Syntax_Highlighter-v16.1.1-orange)](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
+[![React Syntax Highlighter](https://img.shields.io/badge/React_Syntax_Highlighter-v16.1.1-orange)](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 - A modern generative AI web app serving as a natural LLM interface, recreating a `ChatGPT-like experience` through seamless multi-model integration, rich Markdown rendering, and beautifully formatted code blocks.
