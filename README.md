@@ -19,8 +19,8 @@
 
 ### 💬 Real-Time Conversational Experience
 
-- Experience natural AI conversations through a responsive interface that instantly connects user prompts with the OpenAI GPT-4o model.
-- Every interaction is designed to feel fluid, distraction-free, and closely aligned with the experience of modern conversational AI platforms.
+- Experience natural AI conversations through a responsive platform that instantly connects user prompts with seamless multi-model integration, delivering intelligent, real-time responses.
+- Every interaction is designed to feel fluid, distraction-free, and closely aligned with the experience of today's leading digital assistants.
 
 ### 📝 Rich Markdown Rendering
 
