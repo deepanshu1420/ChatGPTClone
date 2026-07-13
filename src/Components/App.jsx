@@ -39,13 +39,7 @@ function markdownToPlainText(md) {
     .replace(/^[\s]*(\d+)\.\s+/gm, '$1. ')
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
     .replace(/~~(.+?)~~/g, '$1')
-
-    // ✅ Preserve blank line before numbered lists
-    .replace(/([^\n])\n(\d+\.\s)/g, '$1\n\n$2')
-
-    // ✅ Normalize Windows line endings
     .replace(/\r\n/g, '\n')
-
     .replace(/\n{3,}/g, '\n\n')
     .trim();
 }
