@@ -21,6 +21,26 @@ const customTheme = {
   }
 };
 
+function markdownToPlainText(md) {
+  return md
+    .replace(/```[\w]*\n?([\s\S]*?)```/g, (_, code) => '\n' + code.trim() + '\n')
+    .replace(/^(.+)\n[=]{2,}\s*$/gm, '$1')
+    .replace(/^(.+)\n[-]{2,}\s*$/gm, '$1')
+    .replace(/^#{1,6}\s+(.+)/gm, '$1')
+    .replace(/\*\*\*(.+?)\*\*\*/g, '$1')
+    .replace(/\*\*(.+?)\*\*/g, '$1').replace(/__(.+?)__/g, '$1')
+    .replace(/\*(.+?)\*/g, '$1').replace(/_(.+?)_/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/^>\s*/gm, '')
+    .replace(/^[-=*_]{3,}\s*$/gm, '')
+    .replace(/^[\s]*[-*+]\s+/gm, '')
+    .replace(/^[\s]*(\d+)\.\s+/gm, '$1. ')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/~~(.+?)~~/g, '$1')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
 function App() {
 
     const showYourFace = useRef(null);
@@ -32,6 +52,10 @@ function App() {
     const [loading, setLoading] = useState(false);
     const [newQuestion, setNewQuestion] = useState("");
     const [copiedIndex, setCopiedIndex] = useState(null);
+    const [streamingText, setStreamingText] = useState("");
+    const typingAbortRef = useRef(false);
+    const isUserScrollingRef = useRef(false);
+    const cardRef = useRef(null);
     
     function shoot(e) {
         
@@ -51,6 +75,46 @@ function App() {
 
         }
 
+    }
+
+    function typeOut(text) {
+        
+        if (text.includes("```")) {
+            
+            setStreamingText(text);
+            return Promise.resolve();
+        
+        }
+        
+            typingAbortRef.current = false;
+            return new Promise((resolve) => {
+            
+            const words = text.split(" ");
+            const delay = Math.max(10, Math.min(50, 2000 / words.length));
+            
+            let i = 0;
+            
+            setStreamingText("");
+            
+            function next() {
+                
+                if (typingAbortRef.current) { resolve(); return; }
+                
+                if (i < words.length) {
+                    
+                    setStreamingText(prev => prev + (i === 0 ? "" : " ") + words[i]);
+                    
+                    i++;
+                    
+                    setTimeout(next, delay);
+                
+                } else {
+                    
+                    resolve();
+                }
+            }
+            next();
+        });
     }
 
     async function trigger(question = "") {
@@ -87,13 +151,17 @@ function App() {
 
             // ✅ If null, user stopped — don't add anything to chat
             if (response !== null) {
+                await typeOut(response);
+                
                 updateBag(prev => [
                     ...prev,
+                    
                     {
                         text: response,
                         isBot: true
                     }
                 ]);
+                setStreamingText("");
             }
 
         }
@@ -124,25 +192,45 @@ function App() {
         }
 
     }
-
+    
     function stopGeneration() {
-
-        // ✅ Actually cancels the in-flight API request
+        
         if (abortControllerRef.current) {
             abortControllerRef.current.abort();
         }
-
+        
+        typingAbortRef.current = true;
+        
+        setStreamingText("");
         setLoading(false);
 
     }
+    
+    useEffect(() => {
+        
+        const card = cardRef.current;
+        
+        if (!card) return;
+        const handleScroll = () => {
+        const { scrollTop, scrollHeight, clientHeight } = card;
+        isUserScrollingRef.current = scrollHeight - scrollTop - clientHeight > 100;
+    };
+    
+    card.addEventListener("scroll", handleScroll);
+    return () => card.removeEventListener("scroll", handleScroll);
+    
+    }, []);
 
     useEffect(() => {
-
-        showYourFace.current?.scrollIntoView({
+        
+        if (!isUserScrollingRef.current) {
+            
+            showYourFace.current?.scrollIntoView({
             behavior: "smooth"
         });
+    }
 
-    }, [bag]);
+    }, [bag, streamingText]);
 
     useEffect(() => {
         
@@ -169,7 +257,7 @@ function App() {
     }
 
     function copyText(text, index) {
-        navigator.clipboard.writeText(text);
+        navigator.clipboard.writeText(markdownToPlainText(text));
         setCopiedIndex(index);
         setTimeout(() => setCopiedIndex(null), 2000);
     }
@@ -276,7 +364,7 @@ function App() {
 
                     </div>
 
-                    <div className="card">
+                    <div className="card" ref={cardRef}>
 
                         {
                             bag.map((ele, index) => (
@@ -344,6 +432,46 @@ function App() {
 
                             ))
                         }
+
+                        {loading && !streamingText && (
+                            
+                            <div className="bot-text typing-wrapper">
+                                <img src={LogoIcon} alt="Bot" />
+                                <div className="message-content">
+                                    <div className="typing-dots">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        </div>
+                                        </div>
+                                        </div>
+                                    )}
+                                    
+                                    {streamingText && (
+                                        <div className="bot-text">
+                                            <img src={LogoIcon} alt="Bot" />
+                                            <div className="message-content">
+                                                <ReactMarkdown
+                                                remarkPlugins={[remarkGfm]}
+                                                components={{
+                                                    code({ children, className }) {
+                                                        const match = /language-(\w+)/.exec(className || "");
+                                                        if (match) {
+                                                            return (
+                                                            <SyntaxHighlighter style={customTheme} language={match[1]} PreTag="div">
+                                                                {String(children).replace(/\n$/, "")}
+                                                                </SyntaxHighlighter>
+                                                                );
+                                                            }
+                                                            return <code className={className}>{children}</code>;
+                                                        }
+                                                    }}
+                                                    >
+                                                        {streamingText}
+                                                        </ReactMarkdown>
+                                                        </div>
+                                                        </div>
+                                                    )}
 
                         <div
                             className="last"
