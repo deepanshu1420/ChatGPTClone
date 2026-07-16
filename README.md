@@ -49,7 +49,7 @@
 
 > Intelligent AI Model Reliability:
 
-- Performs an `automatic startup health check` to ensure the preferred AI model is available before conversations begin.
+- Performs an `automatic health check` to ensure the preferred AI model is available before conversations begin.
 - Seamlessly falls back to another compatible model whenever the preferred model becomes unavailable, ensuring uninterrupted AI responses throughout the session.
 
 ## 📸 Screenshots / Demo
