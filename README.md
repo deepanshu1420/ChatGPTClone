@@ -87,6 +87,7 @@
 - **📋 GitHub Flavored Markdown:** Remark GFM (v4.0.1)
 - **💻 Code Highlighting:** React Syntax Highlighter (v16.1.1)
 - **🌙 Syntax Theme:** Prism One Dark
+- **🌿 Version Control:** Git & GitHub
 - **🔗 Deployment:** Vercel
 
 ## ⚙️ Setup & Installation
