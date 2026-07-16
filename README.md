@@ -13,7 +13,7 @@
 - A modern generative AI web app serving as a `natural LLM interface`, recreating a ChatGPT-like experience with seamless AI model orchestration, rich Markdown rendering, and beautifully formatted code blocks.
 - Crafted with a strong focus on usability, responsiveness, and fluid interactions, delivering a polished problem-solving ecosystem optimized for both desktop and mobile devices.
 
-**🌐 Redefining the ChatGPT-inspired assistant :** [Live Demo](https://chatgptclonee.vercel.app/)
+**🌐 Ready to chat with your next AI assistant :** [Live Demo](https://chatgptclonee.vercel.app/)
 
 ## ✨ Features / Highlights
 
