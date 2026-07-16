@@ -519,6 +519,36 @@ input:focus {
     white-space: pre;
 }
 
+.bot-text pre::-webkit-scrollbar {
+    height: 8px;
+}
+
+.bot-text pre::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.bot-text pre::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        90deg,
+        #686de0,
+        #5b5fe6
+    );
+    border-radius: 999px;
+}
+
+.bot-text pre::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        90deg,
+        #7b80f4,
+        #686de0
+    );
+}
+
+.bot-text pre {
+    scrollbar-width: thin;
+    scrollbar-color: #686de0 transparent;
+}
+
 .bot-text pre code {
     background: transparent !important;
     padding: 0 !important;

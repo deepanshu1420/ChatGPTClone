@@ -21,6 +21,46 @@ function scoreModel(modelId) {
   const id = modelId.toLowerCase();
   let score = 0;
 
+  // ✅ Tier 1 — OpenAI (newest first)
+  const gptMatch = id.match(/gpt-(\d+)/); // version number extract karo
+  if (gptMatch) {
+    const version = parseInt(gptMatch[1]);
+    score += Math.min(110, 60 + version * 10); // gpt-3→90, gpt-4→100, gpt-5→110, gpt-6→120 ✅
+    if (id.includes("gpt-4o")) score += 5; // gpt-4o slightly above plain gpt-4
+  }
+  else if (/^o\d/.test(id)) {
+    const oMatch = id.match(/^o(\d+)/);
+    const oVersion = oMatch ? parseInt(oMatch[1]) : 1;
+    score += 80 + (oVersion * 5); // o1→85, o3→95, o5→105, o7→115 ✅
+  }
+  else if (id.includes("gpt"))     score += 78; // koi bhi gpt jo match na ho
+  else if (id.includes("openai"))  score += 75;
+
+  // ✅ Tier 2 — Claude (version-aware)
+  else {
+    const claudeMatch = id.match(/claude-(\d+)[.-](\d+)/) || id.match(/claude-(\d+)/);
+    if (claudeMatch) {
+
+  const version = claudeMatch[2]
+    ? parseFloat(`${claudeMatch[1]}.${claudeMatch[2]}`)
+    : parseInt(claudeMatch[1]);
+  score += 30 + (version * 10);
+  
+  } else if (id.includes("claude")) {
+      score += 50; // catch-all
+  }
+
+  // ✅ Tier 3 — Gemini (version-aware)
+  const geminiMatch = id.match(/gemini-(\d+(?:\.\d+)?)/);
+    if (geminiMatch) {
+      const version = parseFloat(geminiMatch[1]);
+      score += 10 + (version * 10);
+      // gemini-1.5 → 25, gemini-2 → 30, gemini-2.5 → 35, gemini-3 → 40 ✅
+    } else if (id.includes("gemini")) {
+      score += 25; // catch-all
+    }
+  }
+
   // Specialized models (coding, instruct, etc.)
   if (id.includes("coding"))   score += 10;
   if (id.includes("instruct")) score += 5;
@@ -50,8 +90,47 @@ function scoreModel(modelId) {
   return score;
 }
 
+function isTextModel(modelId) {
+  const id = modelId.toLowerCase();
+
+  // ❌ Filter OUT these — they never return text chat responses
+  if (id.includes("embed"))            return false; // embedding models
+  if (id.includes("embedding"))        return false;
+  if (id.includes("dall-e"))           return false; // image generation
+  if (id.includes("stable-diffusion")) return false;
+  if (id.includes("imagen"))           return false;
+  if (id.includes("tts"))              return false; // text-to-speech
+  if (id.includes("whisper"))          return false; // speech-to-text
+  if (id.includes("speech"))           return false;
+  if (id.includes("audio"))            return false;
+  if (id.includes("transcri"))         return false; // transcription
+  if (id.includes("clip"))             return false; // image-text matching
+  if (id.includes("bge"))              return false; // embedding models
+  if (id.includes("reward"))           return false; // reward/RLHF models
+  if (id.includes("retriev"))          return false; // retriever models
+  if (id.includes("detector"))         return false; // classifier/detector
+  if (id.includes("video"))            return false; // video models
+  if (id.includes("deplot"))           return false; // chart/plot models
+  if (id.includes("pii"))              return false; // PII detection models
+  if (id.includes("vision"))           return false;
+  if (id.includes("multimodal"))       return false;
+  if (id.includes("-vl"))              return false;
+  if (id.includes("guard"))            return false;
+  if (id.includes("safety"))           return false;
+  if (id.includes("translate"))        return false;
+  if (id.includes("parse"))            return false;
+  if (id.includes("kosmos"))           return false;
+  if (id.includes("fuyu"))             return false;
+  if (id.includes("calibration"))      return false;
+
+  return true;   // ✅ everything else assumed text
+  
+}
+
 function sortModelsByPreference(modelIds) {
-  return [...modelIds].sort((a, b) => scoreModel(b) - scoreModel(a));
+  return [...modelIds]
+    .filter(isTextModel) // ✅ remove non-text models first
+    .sort((a, b) => scoreModel(b) - scoreModel(a));
 }
 
 // ─── Fetch Models from BluesMinds ───────────────────────────────────────────
@@ -109,8 +188,31 @@ async function fetchModels() {
   }
 }
 
-// ─── Pre-fetch models as soon as the app loads ──────────────────────────────
-fetchModels();
+// ─── Health check on app load ────────────────────────────────────────────────
+async function healthCheck() {
+  const models = await fetchModels(); // fetch + sort (OpenAI first)
+  if (!models || models.length === 0) return;
+
+  // Ping top 10 models silently to find first working one
+  const toCheck = models.slice(0, 10);
+
+  for (const modelId of toCheck) {
+    try {
+      await openai.chat.completions.create({
+        model: modelId,
+        messages: [{ role: "user", content: "hi" }],
+        max_tokens: 1, // super lightweight ping
+      });
+      lastWorkingModelId = modelId; // ✅ ready before first user message
+      console.log(`Health check passed: ${modelId}`);
+      break;
+    } catch {
+      console.warn(`Health check failed: ${modelId}, trying next...`);
+    }
+  }
+}
+
+healthCheck(); // runs silently on app load
 
 // ─── Error Classifier ───────────────────────────────────────────────────────
 // Returns { type, message }
