@@ -19,12 +19,12 @@
 
 ### 💬 Real-Time Conversational Experience
 
-- Experience natural AI conversations through a responsive platform that instantly connects user prompts with seamless multi-model integration, delivering intelligent, real-time responses.
+- Experience natural AI conversations through a responsive platform that instantly connects user prompts with seamless `multi-model integration`, delivering intelligent, real-time responses.
 - Every interaction is designed to feel fluid, distraction-free, and closely aligned with the experience of today's leading digital assistants.
 
 ### 📝 Rich Markdown Rendering
 
-- AI responses are automatically transformed into beautifully formatted content using GitHub Flavored Markdown.
+- AI responses are automatically transformed into beautifully formatted content using `GitHub Flavored Markdown`.
 - Supports headings, lists, tables, links, and inline formatting to keep every response structured, readable, and visually consistent.
 
 ### 💻 Elegant Code Presentation
@@ -34,7 +34,7 @@
 
 ### 🔥 Fast & Responsive User Interface
 
-- Built with React's component-driven architecture to deliver smooth rendering, responsive layouts, and a seamless user experience across devices.
+- Built with React's `component-driven architecture` to deliver smooth rendering, responsive layouts, and a seamless user experience across devices.
 - Features automatic scrolling and an adaptive input area that expands naturally as users type longer prompts, ensuring uninterrupted and comfortable interactions.
 
 ### 🎯 Productivity-Focused Interactions
@@ -47,6 +47,11 @@
 - Gracefully handles common API and network failures, including authentication issues, rate limits, permission errors, server failures, and network interruptions.
 - Provides meaningful feedback while ensuring the interface remains stable and responsive, even when requests are cancelled or unexpected errors occur.
 
+> Intelligent AI Model Reliability:
+
+- Performs an `automatic startup health check` to verify the availability of the preferred AI model before conversations begin.
+- Seamlessly falls back to another compatible model whenever the preferred model becomes unavailable, ensuring uninterrupted AI responses throughout the session.
+
 ## 📸 Screenshots / Demo
 
 > Take a look at some screenshots showcasing the website.
@@ -54,7 +59,7 @@
 ### 🏠 Home
 
 ![Home](./screenshots/Home.png)
-*The landing interface featuring a clean layout, quick prompt suggestions, and an intuitive conversational workspace.*
+*The landing interface featuring a clean layout, `quick prompt suggestions`, and an intuitive conversational workspace.*
 
 ### 💬 Conversation
 
