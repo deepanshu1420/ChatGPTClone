@@ -39,7 +39,7 @@
 
 ### 🎯 Productivity-Focused Interactions
 
-- Includes thoughtful productivity features such as one-click response copying, predefined prompt shortcuts, and instant conversation reset.
+- Includes thoughtful productivity features such as `one-click response copying`, predefined prompt shortcuts, and instant conversation reset.
 - Supports seamless cancellation of AI response generation without disrupting the overall application experience.
 
 ### 🛡️ Reliable Error Management
