@@ -10,7 +10,7 @@
 [![React Syntax Highlighter](https://img.shields.io/badge/React_Syntax_Highlighter-v16.1.1-orange)](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-- A modern generative AI web app serving as a `natural LLM interface`, recreating a ChatGPT-like experience through seamless AI model orchestration, rich Markdown rendering, and beautifully formatted code blocks.
+- A modern generative AI web app serving as a `natural LLM interface`, recreating a ChatGPT-like experience with seamless AI model orchestration, rich Markdown rendering, and beautifully formatted code blocks.
 - Crafted with a strong focus on usability, responsiveness, and fluid interactions, delivering a polished problem-solving ecosystem optimized for both desktop and mobile devices.
 
 **🌐 Redefining the ChatGPT-inspired assistant :** [Live Demo](https://chatgptclonee.vercel.app/)
