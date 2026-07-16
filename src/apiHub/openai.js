@@ -3,7 +3,9 @@ import OpenAI from "openai";
 // ─── OpenAI Client (BluesMinds-compatible) ──────────────────────────────────
 const openai = new OpenAI({
   apiKey: process.env.REACT_APP_BLUESMINDS_API_KEY,
-  baseURL: process.env.REACT_APP_BLUESMINDS_BASE_URL,
+  baseURL: process.env.NODE_ENV === "production"
+  ? "/api"
+  : process.env.REACT_APP_BLUESMINDS_BASE_URL,
   dangerouslyAllowBrowser: true,
 });
 
@@ -148,9 +150,9 @@ async function fetchModels() {
 
   try {
     // Strip trailing slash to avoid double-slash in URL
-    const baseURL = (
-      process.env.REACT_APP_BLUESMINDS_BASE_URL || ""
-    ).replace(/\/$/, "");
+    const baseURL = process.env.NODE_ENV === "production"
+    ? "/api"
+    : (process.env.REACT_APP_BLUESMINDS_BASE_URL || "").replace(/\/$/, "");
 
     const res = await fetch(`${baseURL}/models`, {
       headers: {
