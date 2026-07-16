@@ -45,12 +45,12 @@
 ### 🛡️ Reliable Error Management
 
 - Gracefully handles common API and network failures, including authentication issues, rate limits, permission errors, server failures, and network interruptions.
-- Provides meaningful feedback while ensuring the interface remains stable and responsive, even when requests are cancelled or unexpected errors occur.
+- Provides meaningful feedback while keeping the interface stable and responsive during cancellations or unexpected errors.
 
 > Intelligent AI Model Reliability:
 
 - Performs an `automatic health check` to ensure the preferred AI model is available before conversations begin.
-- Seamlessly falls back to another compatible model whenever the preferred model becomes unavailable, ensuring uninterrupted AI responses throughout the session.
+- Seamlessly falls back to a compatible AI model, ensuring uninterrupted responses throughout the session.
 
 ## 📸 Screenshots / Demo
 
